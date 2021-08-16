@@ -18,4 +18,68 @@
 .header-container {
     max-width: 1234px; /* ... I declare a thumb war. */
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    --logo-circle-size: 156px;
+    width: var(--logo-circle-size);
+    height: var(--logo-circle-size);
+    background: var(--tan-yellow);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img {
+    max-width: 95px;
+    margin-right: 5px;
+}
+
+.logo-headings {
+    margin-left: -27px;
+}
+
+.logo-heading {
+    margin-bottom: 5px;
+}
+
+.logo-sub-heading {
+    margin-left: 2px;
+}
+
+.header-search {
+    margin-top: 41px;
+    border: 2px solid var(--magenta-purple);
+    display: flex;
+}
+
+.search-box {
+    display: block;
+    border: 0;
+    line-height: 23px;
+    font-weight: 600;
+    font-family: var(--body-font);
+    font-size: 14px;
+    padding: 13.5px 18px;
+    width: 272px;
+}
+
+.search-box,
+.search-box::placeholder {
+    color: var(--body-black);
+}
+
+.search-button {
+    display: block;
+    border: 0;
+    background: var(--magenta-purple);
+    cursor: pointer;
 }

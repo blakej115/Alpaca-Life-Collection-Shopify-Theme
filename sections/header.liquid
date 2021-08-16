@@ -5,9 +5,22 @@
   <div class="header-main">
     <div class="header-container">
       <div class="logo">
-        <a href="/">
-
+        <a class="logo-link" href="/">
+          <div class="logo-icon">
+            <img class="logo-img" src="{{ section.settings.logo_svg_icon_url }}" alt="{{ section.settings.logo_text }}">
+          </div>
+          <div class="logo-headings">
+            <h2 class="logo-heading">{{ section.settings.logo_text }}</h2>
+            <h3 class="logo-sub-heading">{{ section.settings.logo_sub_text }}</h3>
+          </div>
         </a>
+      </div>
+      <div class="header-right">
+        <form class="header-search" action="{{ routes.search_url }}" method="get" role="search">
+            <input type="hidden" name="options[prefix]" value="last">
+            <input class="search-box" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search">
+            <button class="search-button" aria-label="{{ 'general.search.search' | t }}">Search</button>
+        </form>
       </div>
     </div>
   </div>
@@ -24,8 +37,18 @@
     },
     {
       "type": "url",
-      "id": "logo",
-      "label": "Logo"
+      "id": "logo_svg_icon_url",
+      "label": "Logo SVG Icon URL"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo Text"
+    },
+    {
+      "type": "text",
+      "id": "logo_sub_text",
+      "label": "Logo Sub Text"
     }
   ]
 }
