@@ -1,5 +1,5 @@
 {
-  "name": "alpaca-life-collection",
+  "name": "Alpaca-Life-Collection-Shopify-Theme",
   "version": "1.0.0",
   "description": "[![Build status](https://github.com/shopify/dawn/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/Shopify/dawn/actions/workflows/ci.yml?query=branch%3Amain) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?color=informational)](/CONTRIBUTING.md)",
   "main": "index.js",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/blakej115/Alpaca-Life-Collection-Shopify-Theme/issues"
   },
-  "homepage": "https://github.com/blakej115/Alpaca-Life-Collection-Shopify-Theme#readme"
+  "homepage": "https://github.com/blakej115/Alpaca-Life-Collection-Shopify-Theme#readme",
+  "devDependencies": {
+    "laravel-mix": "^6.0.27"
+  }
 }
