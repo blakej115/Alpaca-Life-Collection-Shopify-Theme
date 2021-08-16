@@ -1,5 +1,16 @@
 <header id="header">
+  <div class="top-banner">
+    {{ section.settings.banner_content }}
+  </div>
+  <div class="header-main">
+    <div class="header-container">
+      <div class="logo">
+        <a href="/">
 
+        </a>
+      </div>
+    </div>
+  </div>
 </header>
 
 {% schema %}
@@ -7,9 +18,14 @@
   "name": "Header",
   "settings": [
     {
-      "type": "image_picker",
+      "type": "richtext",
+      "id": "banner_content",
+      "label": "Banner Content"
+    },
+    {
+      "type": "url",
       "id": "logo",
-      "label": "t:sections.header.settings.logo.label"
+      "label": "Logo"
     }
   ]
 }

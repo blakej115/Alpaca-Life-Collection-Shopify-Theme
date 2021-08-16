@@ -1,11 +1,12 @@
-let mix = require('laravel-mix');
+let mix = require('laravel-mix')
+require('laravel-mix-imagemin')
 
 if (!mix.inProduction()) {
     mix
         .browserSync({
-            proxy: 'logistix.lndo.site:49166',
+            proxy: '127.0.0.1:9292',
             files: [
-                'assets/**/*',
+                'src/**/*',
                 'layout/**/*',
                 'sections/**/*',
                 'snippets/**/*',
@@ -16,9 +17,9 @@ if (!mix.inProduction()) {
 }
 
 mix
-    .setPublicPath('assets/dist')
-    .ts('assets/src/js/app.ts', 'assets/dist/js/')
-    .postCss('assets/src/css/style.css', 'assets/dist/css/')
-    .imagemin('images/*', {
-        context: 'assets/src'
+    .setPublicPath('assets')
+    .js('src/js/app.js', 'assets/')
+    .postCss('src/css/style.css', 'assets/')
+    .imagemin('*', {
+        context: 'src/images'
     })

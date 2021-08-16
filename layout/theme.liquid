@@ -108,6 +108,8 @@
     <!-- Custom <head> Code Starts Here -->
     <link rel="stylesheet" href="https://use.typekit.net/zwo0tej.css">
 
+    <link rel="stylesheet" href="{{ 'style.css' | asset_url }}">
+
   </head>
 
   <body>
@@ -115,7 +117,6 @@
       {{ "accessibility.skip_to_text" | t }}
     </a>
 
-    {% section 'announcement-bar' %}
     {% section 'header' %}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
@@ -146,5 +147,8 @@
         unavailable: `{{ 'products.product.unavailable' | t }}`,
       }
     </script>
+
+    <!-- Custom scripts -->
+    <script src="{{ 'app.js' | asset_url }}"></script>
   </body>
 </html>

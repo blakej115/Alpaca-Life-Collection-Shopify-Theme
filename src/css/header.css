@@ -1,0 +1,21 @@
+.top-banner {
+    background: var(--dark-green-blue);
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 21px var(--x-spacing);
+}
+
+.header-main {
+    background: #fff;
+    padding: 35px var(--x-spacing) 100px;
+}
+
+.header-container {
+    max-width: 1234px; /* ... I declare a thumb war. */
+    margin: 0 auto;
+}
