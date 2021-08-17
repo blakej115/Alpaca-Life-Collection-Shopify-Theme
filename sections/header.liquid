@@ -36,6 +36,15 @@
     {%- for link in section.settings.menu.links -%}
       <li>
         <a class="h-nav" href="{{ link.url | escape }}">{{ link.title | escape }}</a>
+        {%- if link.links != blank -%}
+          <ul class="mega-menu">
+            {%- for childlink in link.links -%}
+              <li>
+                <a class="h-category" href="{{ childlink.url | escape }}">{{ childlink.title | escape }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
       </li>
     {%- endfor -%}
   </ul>
