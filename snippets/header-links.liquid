@@ -1,0 +1,14 @@
+<ul>
+	<li>
+		<a class="h-nav" href="/account/login">
+			<span>Log In</span>
+		</a>
+	</li>
+	<li class="header-links-sep"> | </li>
+	<li>
+		<a class="h-nav" href="/cart">
+			<img class="cart-icon" src="{{ 'cart.svg' | asset_url }}" alt="Cart Icon">
+			<span>Cart{%- if cart != empty -%}&nbsp;({{ cart.item_count }}){%- endif -%}</span>
+		</a>
+	</li>
+</ul>

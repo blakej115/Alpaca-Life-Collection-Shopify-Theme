@@ -21,20 +21,22 @@
     display: flex;
     align-items: center;
     color: var(--body-black);
+    --logo-circle-size: 156px;
+    font-size: var(--logo-circle-size);
     &:hover {
         & .logo-icon {
             transform: scale(1.1);
         }
         & .logo-headings {
-            transform: translateX(1rem);
+            transform: translateX(em(16px, 156px));
         }
     }
 }
 
 .logo-icon {
-    --logo-circle-size: 156px;
-    width: var(--logo-circle-size);
-    height: var(--logo-circle-size);
+    --logo-circle-em-size: 1em;
+    width: var(--logo-circle-em-size);
+    height: var(--logo-circle-em-size);
     background: var(--tan-yellow);
     border-radius: 50%;
     display: flex;
@@ -44,12 +46,13 @@
 }
 
 .logo-img {
-    max-width: 95px;
-    margin-right: 5px;
+    /* The postcss-em plugin doesn't support using variables for the base value, so that's unfortunate. */
+    max-width: em(95px, 156px);
+    margin-right: em(5px, 156px);
 }
 
 .logo-headings {
-    margin-left: -27px;
+    margin-left: em(-27px, 156px);
     transition: transform var(--trans);
 }
 
@@ -160,31 +163,100 @@
     /* This is a trick to add a class using an intersection observer, see src/js/nav.js */
     top: -1px;
     z-index: 9;
-    &.active {
-        /* Compensate for the trick */
-        padding-top: 1px;
-
-        & > ul {
-            max-width: 100%;
-        }
-    }
     & > ul {
         list-style-type: none;
         display: flex;
         background: var(--magenta-purple);
-        height: 86px;
         max-width: 954px;
         margin: 0 auto;
         padding: 0;
         justify-content: center;
         align-items: center;
-        transition: max-width var(--trans);
+        transition: max-width var(--trans), transform var(--trans);
         & > li {
             & > a {
                 display: block;
                 color: #fff;
                 padding: 0 20px;
+                position: relative;
+                --nav-height: 86px;
+                height: var(--nav-height);
+                line-height: var(--nav-height);
+                /* Required for circle animation to appear below text. */
+                transform: translateZ(0);
+                transition: color var(--trans);
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%) scale(0);
+                    background: var(--tan-yellow);
+                    border-radius: 50%;
+                    width: var(--nav-height);
+                    height: var(--nav-height);
+                    transition: transform var(--trans);
+                    z-index: -1;
+                }
+                &:hover {
+                    color: var(--magenta-purple);
+                    &:before {
+                        transform: translate(-50%,-50%) scale(1);
+                    }
+                }
             }
         }
+    }
+}
+
+#nav {
+    --nav-top-height: 98px;
+    &.active {
+        /* Compensate for the trick */
+        padding-top: 1px;
+        & > ul {
+            max-width: 100%;
+        }
+        & .nav-top {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: initial;
+        }
+        &:hover {
+            padding-top: 0;
+            & .nav-top {
+                transform: translateY(0);
+            }
+            & > ul {
+                transform: translateY(var(--nav-top-height));
+            }
+        }
+    }
+}
+
+.nav-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 51px;
+    height: var(--nav-top-height);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-100%);
+    transition: transform var(--trans), opacity var(--trans), visibility var(--trans);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    background: #fff;
+}
+
+.nav-logo {
+    & .logo-link {
+        --logo-circle-size: 82px;
+    }
+    & .logo-headings {
+        margin-left: -12px;
     }
 }

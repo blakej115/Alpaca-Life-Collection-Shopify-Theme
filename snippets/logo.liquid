@@ -1,0 +1,13 @@
+<a class="logo-link" href="/">
+	<div class="logo-icon">
+		<img class="logo-img" src="{{ section.settings.logo_svg_icon_url }}" alt="{{ section.settings.logo_text }}">
+	</div>
+	<div class="logo-headings">
+		{% if main %}
+			<h2 class="logo-heading">{{ section.settings.logo_text }}</h2>
+			<h3 class="logo-sub-heading">{{ section.settings.logo_sub_text }}</h3>
+		{% else %}
+			<h4 class="nav-logo-heading h-nav-logo">{{ section.settings.logo_text }}</h4>
+		{% endif %}
+	</div>
+</a>

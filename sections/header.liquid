@@ -5,15 +5,7 @@
   <div class="header-main">
     <div class="header-container">
       <div class="logo">
-        <a class="logo-link" href="/">
-          <div class="logo-icon">
-            <img class="logo-img" src="{{ section.settings.logo_svg_icon_url }}" alt="{{ section.settings.logo_text }}">
-          </div>
-          <div class="logo-headings">
-            <h2 class="logo-heading">{{ section.settings.logo_text }}</h2>
-            <h3 class="logo-sub-heading">{{ section.settings.logo_sub_text }}</h3>
-          </div>
-        </a>
+        {% render 'logo', main: true %}
       </div>
       <div class="header-right">
         <form class="header-search" action="{{ routes.search_url }}" method="get" role="search">
@@ -24,20 +16,7 @@
             </button>
         </form>
         <div class="header-links">
-          <ul>
-            <li>
-              <a class="h-nav" href="/account/login">
-                <span>Log In</span>
-              </a>
-            </li>
-            <li class="header-links-sep"> | </li>
-            <li>
-              <a class="h-nav" href="/cart">
-                <img class="cart-icon" src="{{ 'cart.svg' | asset_url }}" alt="Cart Icon">
-                <span>Cart{%- if cart != empty -%}&nbsp;({{ cart.item_count }}){%- endif -%}</span>
-              </a>
-            </li>
-          </ul>
+          {% render 'header-links' %}
         </div>
       </div>
     </div>
@@ -45,6 +24,14 @@
 </header>
 
 <nav id="nav" data-nav="primary">
+  <div class="nav-top">
+    <div class="logo nav-logo">
+      {% render 'logo', main: false %}
+    </div>
+    <div class="header-links nav-header-links">
+      {% render 'header-links' %}
+    </div>
+  </div>
   <ul>
     {%- for link in section.settings.menu.links -%}
       <li>
@@ -61,6 +48,7 @@
     {
       "type": "richtext",
       "id": "banner_content",
+      "default": "<p>Free Shipping Available</p>",
       "label": "Banner Content"
     },
     {
@@ -71,11 +59,13 @@
     {
       "type": "text",
       "id": "logo_text",
+      "default": "Alpacas of Greater TN",
       "label": "Logo Text"
     },
     {
       "type": "text",
       "id": "logo_sub_text",
+      "default": "Superior Breeds since 2007",
       "label": "Logo Sub Text"
     },
     {

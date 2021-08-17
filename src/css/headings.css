@@ -1,27 +1,70 @@
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+/* We make sure each heading class has the same properties, in the event that we're over-writing existing styles. */
+
+h1, .h1 {
     font-family: var(--heading-font);
+    font-style: italic;
     font-weight: bold;
+    font-size: 48px;
+    line-height: 55px;
+    letter-spacing: initial;
+    text-transform: lowercase;
+
 }
 
 h2, .h2 {
+    font-family: var(--heading-font);
+    font-style: initial;
+    font-weight: bold;
     font-size: 36px;
     line-height: 41px;
     letter-spacing: 0.03em;
+    text-transform: initial;
 }
 
-h3, .h3 {
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
     font-family: var(--body-font);
-    font-size: 18px;
+    font-style: initial;
+    font-weight: bold;
     line-height: 23px;
     letter-spacing: 0.09em;
     text-transform: uppercase;
 }
 
+h3, .h3 {
+    font-size: 18px;
+}
+
+h4, .h4 {
+    font-size: 16px;
+}
+
+h5, .h5 {
+    font-size: 14px;
+}
+
+h6, .h6 {
+    font-size: 12px;
+}
+
 .h-nav {
+    font-family: var(--body-font);
+    font-style: initial;
     font-weight: 600;
     font-size: 16px;
     line-height: 21px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
+}
+
+.h-nav-logo {
+    font-family: var(--heading-font);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 27px;
+    letter-spacing: 0.03em;
+    text-transform: initial;
 }
