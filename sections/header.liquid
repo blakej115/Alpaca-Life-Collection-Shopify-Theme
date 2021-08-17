@@ -1,5 +1,5 @@
 <header id="header">
-  <div class="top-banner">
+  <div class="top-banner h-nav">
     {{ section.settings.banner_content }}
   </div>
   <div class="header-main">
@@ -19,12 +19,40 @@
         <form class="header-search" action="{{ routes.search_url }}" method="get" role="search">
             <input type="hidden" name="options[prefix]" value="last">
             <input class="search-box" type="search" name="q" value="{{ search.terms | escape }}" placeholder="Search">
-            <button class="search-button" aria-label="{{ 'general.search.search' | t }}">Search</button>
+            <button class="search-button" aria-label="{{ 'general.search.search' | t }}">
+              <img class="search-icon" src="{{ 'search.svg' | asset_url }}" alt="Search Icon">
+            </button>
         </form>
+        <div class="header-links">
+          <ul>
+            <li>
+              <a class="h-nav" href="/account/login">
+                <span>Log In</span>
+              </a>
+            </li>
+            <li class="header-links-sep"> | </li>
+            <li>
+              <a class="h-nav" href="/cart">
+                <img class="cart-icon" src="{{ 'cart.svg' | asset_url }}" alt="Cart Icon">
+                <span>Cart{%- if cart != empty -%}&nbsp;({{ cart.item_count }}){%- endif -%}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
 </header>
+
+<nav id="nav" data-nav="primary">
+  <ul>
+    {%- for link in section.settings.menu.links -%}
+      <li>
+        <a class="h-nav" href="{{ link.url | escape }}">{{ link.title | escape }}</a>
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>
 
 {% schema %}
 {
@@ -49,6 +77,12 @@
       "type": "text",
       "id": "logo_sub_text",
       "label": "Logo Sub Text"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "Main Menu"
     }
   ]
 }

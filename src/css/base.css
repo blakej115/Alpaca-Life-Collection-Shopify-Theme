@@ -4,28 +4,9 @@
 }
 
 body {
+    background: var(--dark-green-blue);
     font-family: var(--body-font);
     color: var(--body-black);
-}
-
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-    font-family: var(--heading-font);
-    font-weight: bold;
-}
-
-h2, .h2 {
-    font-size: 36px;
-    line-height: 41px;
-    letter-spacing: 0.03em;
-}
-
-h3, .h3 {
-    font-family: var(--body-font);
-    font-size: 18px;
-    line-height: 23px;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
 }
 
 a {

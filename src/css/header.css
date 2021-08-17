@@ -2,11 +2,6 @@
     background: var(--dark-green-blue);
     text-align: center;
     color: #fff;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 21px;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
     padding: 21px var(--x-spacing);
 }
 
@@ -25,6 +20,15 @@
 .logo-link {
     display: flex;
     align-items: center;
+    color: var(--body-black);
+    &:hover {
+        & .logo-icon {
+            transform: scale(1.1);
+        }
+        & .logo-headings {
+            transform: translateX(1rem);
+        }
+    }
 }
 
 .logo-icon {
@@ -36,6 +40,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform var(--trans);
 }
 
 .logo-img {
@@ -45,6 +50,7 @@
 
 .logo-headings {
     margin-left: -27px;
+    transition: transform var(--trans);
 }
 
 .logo-heading {
@@ -57,19 +63,33 @@
 
 .header-search {
     margin-top: 41px;
-    border: 2px solid var(--magenta-purple);
     display: flex;
 }
 
 .search-box {
     display: block;
-    border: 0;
+    border: 2px solid var(--magenta-purple);
+    border-right: 0;
     line-height: 23px;
     font-weight: 600;
     font-family: var(--body-font);
     font-size: 14px;
     padding: 13.5px 18px;
-    width: 272px;
+    width: 274px;
+    transition: border var(--trans);
+    &:focus {
+        outline: 0;
+    }
+}
+
+.header-search:hover .search-box,
+.search-box:focus {
+    border-color: var(--tan-yellow);
+}
+
+.header-search:hover .search-button,
+.search-box:focus + .search-button {
+    background: var(--tan-yellow);
 }
 
 .search-box,
@@ -82,4 +102,89 @@
     border: 0;
     background: var(--magenta-purple);
     cursor: pointer;
+    padding: 0 23px;
+    transition: background var(--trans);
+}
+
+.search-icon {
+    width: 25px;
+}
+
+.header-links {
+    --header-links-height: 25px;
+    & > ul {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        padding: 0;
+        justify-content: flex-end;
+        & > li {
+            & > a {
+                display: flex;
+                color: var(--body-black);
+                align-items: center;
+                height: var(--header-links-height);
+                line-height: var(--header-links-height);
+                padding: 0 24px;
+                transition: color var(--trans);
+                &:hover {
+                    color: var(--magenta-purple);
+                }
+                & > span {
+                    display: block;
+                }
+            }
+            &.header-links-sep {
+                font-size: 0;
+                height: 17px;
+                width: 2px;
+                background: var(--body-black);
+                border-radius: 2px;
+            }
+        }
+    }
+}
+
+.cart-icon {
+    height: var(--header-links-height);
+    margin-right: 9px;
+}
+
+#shopify-section-header {
+    display: inline;
+}
+
+#nav {
+    margin-top: -55px;
+    position: sticky;
+    /* This is a trick to add a class using an intersection observer, see src/js/nav.js */
+    top: -1px;
+    z-index: 9;
+    &.active {
+        /* Compensate for the trick */
+        padding-top: 1px;
+
+        & > ul {
+            max-width: 100%;
+        }
+    }
+    & > ul {
+        list-style-type: none;
+        display: flex;
+        background: var(--magenta-purple);
+        height: 86px;
+        max-width: 954px;
+        margin: 0 auto;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        transition: max-width var(--trans);
+        & > li {
+            & > a {
+                display: block;
+                color: #fff;
+                padding: 0 20px;
+            }
+        }
+    }
 }
