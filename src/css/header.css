@@ -1,3 +1,15 @@
+@mixin hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+@mixin show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: initial;
+}
+
 .top-banner {
     background: var(--dark-green-blue);
     text-align: center;
@@ -197,9 +209,7 @@
         /* Compensate for the trick */
         padding-top: 1px;
         & .nav-top {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: initial;
+            @include show;
         }
         & .nav-bottom {
             max-width: 100%;
@@ -274,9 +284,7 @@
             }
         }
         & > .mega-menu {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: initial;
+            @include show;
         }
     }
 }
@@ -337,9 +345,7 @@
     column-gap: 1rem;
     --mega-menu-x-spacing: 125px;
     padding: 31px var(--mega-menu-x-spacing) 52px;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    @include hide;
     transition: opacity var(--trans), visibility var(--trans);
     & > li {
         & > a {
@@ -433,9 +439,7 @@
     .nav-bottom {
         & > ul {
             transition: opacity var(--trans), visibility var(--trans);
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
+            @include hide;
             position: absolute;
             top: 100%;
             left: 0;
@@ -447,7 +451,11 @@
             padding-bottom: var(--nav-bottom-links-y-spacing);
             transform: translateZ(0);
             & > li {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
                 & > a {
+                    display: inline-block;
                     height: initial;
                     line-height: initial;
                     padding-top: var(--nav-bottom-links-y-spacing);
@@ -460,10 +468,22 @@
         &.menu-active {
             & .nav-bottom {
                 & > ul {
-                    opacity: 1;
-                    visibility: visible;
-                    pointer-events: initial;
+                    @include show;
                 }
+            }
+        }
+    }
+    .mega-menu {
+        position: initial;
+        grid-template-columns: 1fr;
+        padding-left: 0;
+        padding-right: 0;
+        @include show;
+        width: 100%;
+        background: transparent;
+        & > li {
+            & > a {
+                text-align: center;
             }
         }
     }
