@@ -1,6 +1,11 @@
 <a class="logo-link" href="/">
 	<div class="logo-icon">
-		<img class="logo-img" src="{{ section.settings.logo_svg_icon_url }}" alt="{{ section.settings.logo_text }}">
+		{% assign logo_img = 'https://cdn.shopify.com/s/files/1/0588/4867/3992/files/logo.svg?v=1629142311' %}
+		{% assign logo_setting = section.settings.logo_svg_icon_url %}
+		{% if logo_setting %}
+			{% assign logo_img = logo_setting %}
+		{% endif %}
+		<img class="logo-img" src="{{ logo_img }}" alt="{{ section.settings.logo_text }}">
 	</div>
 	<div class="logo-headings">
 		{% if main %}

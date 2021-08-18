@@ -4,7 +4,7 @@
   </div>
   <div class="header-main">
     <div class="header-container">
-      <div class="logo">
+      <div class="logo main-logo">
         {% render 'logo', main: true %}
       </div>
       <div class="header-right">
@@ -23,7 +23,7 @@
   </div>
 </header>
 
-<nav id="nav" data-nav="primary" data-toggle-elem="primary">
+<nav id="nav" data-nav="primary" data-toggle="primary">
   <div class="nav-top">
     <div class="logo nav-logo">
       {% render 'logo', main: false %}
@@ -33,21 +33,25 @@
     </div>
   </div>
   <div class="nav-bottom">
-    <a class="h-nav menu" data-toggle-trigger="primary" data-toggle-class="active">
-      <div class="menu-bars">
-        <div class="menu-bar"> </div>
-        <div class="menu-bar"> </div>
-        <div class="menu-bar"> </div>
-      </div>
-      <span>Menu</span>
-    </a>
+    <div class="menu">
+      <a class="h-nav" href="#menu" data-toggle-trigger="primary" data-toggle-class="menu-active">
+        <div class="menu-bars-holder">
+          <div class="menu-bars">
+            <div class="menu-bar"> </div>
+            <div class="menu-bar"> </div>
+            <div class="menu-bar"> </div>
+          </div>
+        </div>
+        <span>Menu</span>
+      </a>
+    </div>
     <ul>
-      {%- for link in section.settings.menu.links -%}
+      {% for link in section.settings.menu.links %}
         <li>
           <a class="h-nav" href="{{ link.url | escape }}">{{ link.title | escape }}</a>
-          {%- if link.links != blank -%}
+          {% if link.links != blank %}
             <ul class="mega-menu">
-              {%- for childlink in link.links -%}
+              {% for childlink in link.links %}
                 <li>
                   <a class="h-category" href="{{ childlink.url | escape }}">{{ childlink.title | escape }}</a>
                 </li>
@@ -55,7 +59,7 @@
             </ul>
           {% endif %}
         </li>
-      {%- endfor -%}
+      {% endfor %}
     </ul>
   </div>
 </nav>

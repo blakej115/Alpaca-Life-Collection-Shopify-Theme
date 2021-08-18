@@ -1,8 +1,8 @@
 export default class Nav {
-  constructor(name, elem) {
-    // Set the name and nav element.
-    this.name = name
+  constructor(elem, name) {
+    // Set the nav element and name.
     this.elem = elem
+    this.name = name
 
     // Init navs, depending on which nav is which.
     if (this.name === 'primary') {
@@ -13,7 +13,7 @@ export default class Nav {
   initPrimary() {
     // Create an observer for when a sticky nav is at the top of the screen.
     this.observer = new IntersectionObserver(
-      ([e]) => e.target.classList.toggle('active', e.intersectionRatio < 1),
+      ([e]) => e.target.classList.toggle('sticky-active', e.intersectionRatio < 1),
       { threshold: [1] }
     )
     // Observe the nav element.
