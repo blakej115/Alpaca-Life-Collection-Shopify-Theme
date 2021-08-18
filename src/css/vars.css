@@ -6,8 +6,28 @@
     --body-black: #1E1E1E;
     --tan-yellow: #F1E68C;
     --magenta-purple: #79004F;
+    --magenta-purple-trans: rgba(121, 0, 79, 0.6);
 
     --x-spacing: 2rem;
 
     --trans: .4s;
+}
+
+/* Media Queries */
+@custom-media --xl (width <= 1200px);
+@custom-media --lg (width <= 1000px);
+@custom-media --md (width <= 800px);
+@custom-media --sm (width <= 600px);
+@custom-media --xs (width <= 400px);
+
+@media (--lg) {
+    :root {
+        --x-spacing: 1.5rem;
+    }
+}
+
+@media (--sm) {
+    :root {
+        --x-spacing: 1rem;
+    }
 }

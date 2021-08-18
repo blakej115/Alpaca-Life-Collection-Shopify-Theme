@@ -23,7 +23,7 @@
   </div>
 </header>
 
-<nav id="nav" data-nav="primary">
+<nav id="nav" data-nav="primary" data-toggle-elem="primary">
   <div class="nav-top">
     <div class="logo nav-logo">
       {% render 'logo', main: false %}
@@ -32,22 +32,32 @@
       {% render 'header-links' %}
     </div>
   </div>
-  <ul>
-    {%- for link in section.settings.menu.links -%}
-      <li>
-        <a class="h-nav" href="{{ link.url | escape }}">{{ link.title | escape }}</a>
-        {%- if link.links != blank -%}
-          <ul class="mega-menu">
-            {%- for childlink in link.links -%}
-              <li>
-                <a class="h-category" href="{{ childlink.url | escape }}">{{ childlink.title | escape }}</a>
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
-      </li>
-    {%- endfor -%}
-  </ul>
+  <div class="nav-bottom">
+    <a class="h-nav menu" data-toggle-trigger="primary" data-toggle-class="active">
+      <div class="menu-bars">
+        <div class="menu-bar"> </div>
+        <div class="menu-bar"> </div>
+        <div class="menu-bar"> </div>
+      </div>
+      <span>Menu</span>
+    </a>
+    <ul>
+      {%- for link in section.settings.menu.links -%}
+        <li>
+          <a class="h-nav" href="{{ link.url | escape }}">{{ link.title | escape }}</a>
+          {%- if link.links != blank -%}
+            <ul class="mega-menu">
+              {%- for childlink in link.links -%}
+                <li>
+                  <a class="h-category" href="{{ childlink.url | escape }}">{{ childlink.title | escape }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
 </nav>
 
 {% schema %}

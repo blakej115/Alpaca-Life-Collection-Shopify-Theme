@@ -7,7 +7,8 @@
 
 .header-main {
     background: #fff;
-    padding: 35px var(--x-spacing) 100px;
+    --header-main-y-spacing: 35px;
+    padding: var(--header-main-y-spacing) var(--x-spacing) 100px;
 }
 
 .header-container {
@@ -121,6 +122,7 @@
         align-items: center;
         padding: 0;
         justify-content: flex-end;
+        margin: 21px 0 0;
         & > li {
             & > a {
                 display: flex;
@@ -146,6 +148,11 @@
             }
         }
     }
+    &.nav-header-links {
+        & > ul {
+            margin-top: 0;
+        }
+    }
 }
 
 .cart-icon {
@@ -157,77 +164,34 @@
     display: inline;
 }
 
+.menu {
+    display: none;
+}
+
 #nav {
-    margin-top: -55px;
     position: sticky;
     /* This is a trick to add a class using an intersection observer, see src/js/nav.js */
     top: -1px;
     z-index: 9;
-    & > ul {
-        list-style-type: none;
-        display: flex;
-        background: var(--magenta-purple);
-        max-width: 954px;
-        margin: 0 auto;
-        padding: 0;
-        justify-content: center;
-        align-items: center;
-        transition: max-width var(--trans), transform var(--trans);
-        & > li {
-            & > a {
-                display: block;
-                color: #fff;
-                padding: 0 20px;
-                position: relative;
-                --nav-height: 86px;
-                height: var(--nav-height);
-                line-height: var(--nav-height);
-                /* Required for circle animation to appear below text. */
-                transform: translateZ(0);
-                transition: color var(--trans);
-                &:before {
-                    content: '';
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%,-50%) scale(0);
-                    background: var(--tan-yellow);
-                    border-radius: 50%;
-                    width: var(--nav-height);
-                    height: var(--nav-height);
-                    transition: transform var(--trans);
-                    z-index: -1;
-                }
-                &:hover {
-                    color: var(--magenta-purple);
-                    &:before {
-                        transform: translate(-50%,-50%) scale(1);
-                    }
-                }
-            }
-        }
-    }
-}
-
-#nav {
     --nav-top-height: 98px;
+    margin-top: -55px;
     &.active {
         /* Compensate for the trick */
         padding-top: 1px;
-        & > ul {
-            max-width: 100%;
-        }
         & .nav-top {
             opacity: 1;
             visibility: visible;
             pointer-events: initial;
+        }
+        & .nav-bottom {
+            max-width: 100%;
         }
         &:hover {
             padding-top: 0;
             & .nav-top {
                 transform: translateY(0);
             }
-            & > ul {
+            & .nav-bottom {
                 transform: translateY(var(--nav-top-height));
             }
         }
@@ -258,5 +222,119 @@
     }
     & .logo-headings {
         margin-left: -12px;
+    }
+}
+
+.nav-bottom {
+    background: var(--magenta-purple);
+    max-width: 954px;
+    margin: 0 auto;
+    transition: max-width var(--trans), transform var(--trans);
+    position: relative;
+    & > ul {
+        list-style-type: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+        & > li {
+            & > a {
+                display: block;
+                color: #fff;
+                padding: 0 20px;
+                position: relative;
+                --nav-height: 86px;
+                height: var(--nav-height);
+                line-height: var(--nav-height);
+                /* Required for circle animation to appear below text. */
+                transform: translateZ(0);
+                transition: color var(--trans);
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%) scale(0);
+                    background: var(--tan-yellow);
+                    border-radius: 50%;
+                    width: var(--nav-height);
+                    height: var(--nav-height);
+                    transition: transform var(--trans);
+                    z-index: -1;
+                }
+            }
+            &:hover {
+                & > a {
+                    color: var(--magenta-purple);
+                    &:before {
+                        transform: translate(-50%,-50%) scale(1);
+                    }
+                }
+                & > .mega-menu {
+                    opacity: 1;
+                    visibility: visible;
+                    pointer-events: initial;
+                }
+            }
+        }
+    }
+}
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--magenta-purple-trans);
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+    padding: 31px 125px 52px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity var(--trans), visibility var(--trans);
+    & > li {
+        & > a {
+            display: block;
+            color: #fff;
+            transition: color var(--trans), padding-left var(--trans);
+            &:hover {
+                color: var(--tan-yellow);
+                padding-left: 1rem;
+            }
+        }
+    }
+}
+
+@media (--lg) {
+    .header-main {
+        padding-bottom: calc(var(--header-main-y-spacing) + 55px);
+    }
+    .logo-link {
+        --logo-circle-size: 125px;
+    }
+    .logo-heading {
+        margin-bottom: -.25rem;
+    }
+    .header-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .header-search {
+        margin-top: 0;
+        margin-top: 0;
+    }
+    .search-box {
+        width: 231px;
+    }
+}
+
+@media (--md) {
+    .logo-headings {
+        display: none;
     }
 }

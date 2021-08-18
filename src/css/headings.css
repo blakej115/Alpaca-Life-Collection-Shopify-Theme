@@ -38,15 +38,15 @@ h3, .h3 {
 }
 
 h4, .h4 {
-    font-size: 16px;
+    font-size: 17px;
 }
 
 h5, .h5 {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 h6, .h6 {
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .h-nav {
@@ -77,4 +77,109 @@ h6, .h6 {
     line-height: 28px;
     letter-spacing: 0.05em;
     text-transform: initial;
+}
+
+@media (--xl) {
+    h1, .h1 {
+        font-size: 40px;
+    }
+    h2, .h2 {
+        font-size: 28px;
+    }
+    h3, .h3 {
+        font-size: 17px;
+    }
+    h4, .h4 {
+        font-size: 16px;
+    }
+    h5, .h5 {
+        font-size: 15px;
+    }
+    h6, .h6 {
+        font-size: 14px;
+    }
+}
+
+@media (--lg) {
+    h1, .h1 {
+        font-size: 36px;
+    }
+    h2, .h2 {
+        font-size: 24px;
+    }
+    h3, .h3 {
+        font-size: 16px;
+    }
+    h4, .h4 {
+        font-size: 15px;
+    }
+    h5, .h5 {
+        font-size: 14px;
+    }
+    h6, .h6 {
+        font-size: 13px;
+    }
+}
+
+@media (--md) {
+    h1, .h1 {
+        font-size: 34px;
+    }
+    h2, .h2 {
+        font-size: 22px;
+    }
+    h3, .h3 {
+        font-size: 15px;
+    }
+    h4, .h4 {
+        font-size: 14px;
+    }
+    h5, .h5 {
+        font-size: 13px;
+    }
+    h6, .h6 {
+        font-size: 12px;
+    }
+}
+
+@media (--sm) {
+    h1, .h1 {
+        font-size: 32px;
+    }
+    h2, .h2 {
+        font-size: 20px;
+    }
+    h3, .h3 {
+        font-size: 14px;
+    }
+    h4, .h4 {
+        font-size: 13px;
+    }
+    h5, .h5 {
+        font-size: 12px;
+    }
+    h6, .h6 {
+        font-size: 11px;
+    }
+}
+
+@media (--xs) {
+    h1, .h1 {
+        font-size: 30px;
+    }
+    h2, .h2 {
+        font-size: 18px;
+    }
+    h3, .h3 {
+        font-size: 13px;
+    }
+    h4, .h4 {
+        font-size: 12px;
+    }
+    h5, .h5 {
+        font-size: 11px;
+    }
+    h6, .h6 {
+        font-size: 10px;
+    }
 }
