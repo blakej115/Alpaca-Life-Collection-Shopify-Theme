@@ -24,15 +24,13 @@
 }
 
 .header-container {
-    max-width: 1234px; /* ... I declare a thumb war. */
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
 }
 
 /*
     You can convert pixels to em by doing calc(32em / 16)
-    Where 32 is our pixel value and 16 is our font size
+    Where 32 is our pixel value and 16 is our font size in pixels
 */
 
 .logo-link {
@@ -204,7 +202,7 @@
     top: -1px;
     z-index: 9;
     --nav-top-height: 98px;
-    margin-top: -55px;
+    margin-top: var(--nav-offset);
     &.sticky-active {
         /* Compensate for the trick */
         padding-top: 1px;
@@ -256,7 +254,6 @@
         color: #fff;
         padding: 0 20px;
         position: relative;
-        --nav-height: 86px;
         height: var(--nav-height);
         line-height: var(--nav-height);
         /* Required for circle animation to appear below text. */

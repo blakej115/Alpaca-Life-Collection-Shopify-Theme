@@ -1,0 +1,91 @@
+<section id="hero-banner-{{ section.id }}" class="section hero-banner">
+  <img class="hero-banner-img" src="{{ section.settings.banner_bg | img_url: 'master' }}" alt="{{ section.settings.banner_bg.alt }}">
+  <div class="container">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'banner_content' %}
+          <div class="hero-banner-content" {{ block.shopify_attributes }}>
+            <{{ block.settings.banner_h_tag }} class="h-hero">{{ block.settings.banner_heading }}</{{ block.settings.banner_h_tag }}>
+            {{ block.settings.banner_text }}
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner_bg",
+      "label": "Banner Background"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "banner_content",
+      "name": "Banner Content",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "banner_h_tag",
+          "default": "h1",
+          "label": "Banner Heading Tag",
+          "options": [
+            {
+              "value": "h1",
+              "label": "h1"
+            },
+            {
+              "value": "h2",
+              "label": "h2"
+            },
+            {
+              "value": "h3",
+              "label": "h3"
+            },
+            {
+              "value": "h4",
+              "label": "h4"
+            },
+            {
+              "value": "h5",
+              "label": "h5"
+            },
+            {
+              "value": "h6",
+              "label": "h6"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "banner_heading",
+          "default": "hello!",
+          "label": "Banner Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "banner_text",
+          "default": "<p>Alpacas are our passion, and we want to share that with you. At our farm, we are the proud owners of a group of award-winning herdsires– Sierra Bonitas Accoyo Magic, TSP’s Accoyo White Shadow, JAX Accoyo High Roller, ATC Accoyo Gold Nugget, ERA Accoyo Bronzen, and HHSF ACCOYO MONTOYO. We work diligently to breed them with only the best females around, and through superior bloodlines, we produce the most outstanding alpaca wool in existence.</p>",
+          "label": "Banner Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner",
+      "blocks": [
+        {
+          "type": "banner_content"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

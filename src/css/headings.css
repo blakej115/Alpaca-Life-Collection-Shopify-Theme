@@ -79,6 +79,16 @@ h6, .h6 {
     text-transform: initial;
 }
 
+.h-hero {
+    font-family: var(--heading-font);
+    font-style: italic;
+    font-weight: normal;
+    font-size: 70px;
+    line-height: 80px;
+    letter-spacing: 0.03em;
+    text-transform: lowercase;
+}
+
 @media (--xl) {
     h1, .h1 {
         font-size: 40px;

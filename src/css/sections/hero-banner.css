@@ -1,0 +1,36 @@
+.hero-banner {
+    height: 634px;
+    position: relative;
+    overflow: hidden;
+    margin-top: calc((var(--nav-height) + var(--nav-offset)) * -1);
+}
+
+.hero-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-banner-content {
+    position: absolute;
+    --hero-banner-content-size: 541px;
+    width: var(--hero-banner-content-size);
+    bottom: 0;
+    color: #fff;
+    padding: 100px 73px 24px;
+    transform: translateZ(0);
+    & .h-hero {
+        margin-bottom: -.4rem;
+    }
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: var(--hero-banner-content-size);
+        background: var(--magenta-purple-trans);
+        border-radius: 308px;
+        z-index: -1;
+    }
+}

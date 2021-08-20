@@ -9,10 +9,10 @@
 	</div>
 	<div class="logo-headings">
 		{% if main %}
-			<h2 class="logo-heading">{{ section.settings.logo_text }}</h2>
-			<h3 class="logo-sub-heading">{{ section.settings.logo_sub_text }}</h3>
+			<{{ section.settings.logo_text_h_tag }} class="h2 logo-heading">{{ section.settings.logo_text }}</{{ section.settings.logo_text_h_tag }}>
+			<{{ section.settings.logo_sub_text_h_tag }} class="h3 logo-sub-heading">{{ section.settings.logo_sub_text }}</{{ section.settings.logo_sub_text_h_tag }}>
 		{% else %}
-			<h4 class="nav-logo-heading h-nav-logo">{{ section.settings.logo_text }}</h4>
+			<{{ section.settings.logo_nav_h_tag }} class="h4 nav-logo-heading h-nav-logo">{{ section.settings.logo_text }}</{{ section.settings.logo_nav_h_tag }}>
 		{% endif %}
 	</div>
 </a>

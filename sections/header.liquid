@@ -3,7 +3,7 @@
     {{ section.settings.banner_content }}
   </div>
   <div class="header-main">
-    <div class="header-container">
+    <div class="container header-container">
       <div class="logo main-logo">
         {% render 'logo', main: true %}
       </div>
@@ -80,16 +80,112 @@
       "label": "Logo SVG Icon URL"
     },
     {
+      "type": "select",
+      "id": "logo_text_h_tag",
+      "default": "h2",
+      "label": "Logo Text Heading Tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        },
+        {
+          "value": "h4",
+          "label": "h4"
+        },
+        {
+          "value": "h5",
+          "label": "h5"
+        },
+        {
+          "value": "h6",
+          "label": "h6"
+        }
+      ]
+    },
+    {
       "type": "text",
       "id": "logo_text",
       "default": "Alpacas of Greater TN",
       "label": "Logo Text"
     },
     {
+      "type": "select",
+      "id": "logo_sub_text_h_tag",
+      "default": "h3",
+      "label": "Logo Sub Text Heading Tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        },
+        {
+          "value": "h4",
+          "label": "h4"
+        },
+        {
+          "value": "h5",
+          "label": "h5"
+        },
+        {
+          "value": "h6",
+          "label": "h6"
+        }
+      ]
+    },
+    {
       "type": "text",
       "id": "logo_sub_text",
       "default": "Superior Breeds since 2007",
       "label": "Logo Sub Text"
+    },
+    {
+      "type": "select",
+      "id": "logo_nav_h_tag",
+      "default": "h4",
+      "label": "Logo Navigation Heading Tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        },
+        {
+          "value": "h4",
+          "label": "h4"
+        },
+        {
+          "value": "h5",
+          "label": "h5"
+        },
+        {
+          "value": "h6",
+          "label": "h6"
+        }
+      ]
     },
     {
       "type": "link_list",

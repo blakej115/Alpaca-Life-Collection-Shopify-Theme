@@ -11,6 +11,9 @@
     --x-spacing: 2rem;
 
     --trans: .4s;
+
+    --nav-height: 86px;
+    --nav-offset: -55px;
 }
 
 /* Media Queries */
