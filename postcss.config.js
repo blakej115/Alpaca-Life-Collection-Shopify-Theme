@@ -1,7 +1,7 @@
 module.exports = {
+    syntax: 'postcss-scss',
     plugins: {
         'postcss-advanced-variables': {},
-        'postcss-em': {},
         'postcss-preset-env': {
             stage: 0,
         },

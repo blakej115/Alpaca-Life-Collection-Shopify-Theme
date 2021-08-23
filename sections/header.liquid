@@ -1,4 +1,4 @@
-<header id="header">
+<div id="header">
   <div class="top-banner h-nav">
     {{ section.settings.banner_content }}
   </div>
@@ -21,7 +21,7 @@
       </div>
     </div>
   </div>
-</header>
+</div>
 
 <nav id="nav" data-nav="primary" data-toggle="primary">
   <div class="nav-top">
@@ -67,6 +67,7 @@
 {% schema %}
 {
   "name": "Header",
+  "tag": "header",
   "settings": [
     {
       "type": "richtext",

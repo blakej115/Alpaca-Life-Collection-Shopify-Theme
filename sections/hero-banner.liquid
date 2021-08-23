@@ -1,22 +1,29 @@
-<section id="hero-banner-{{ section.id }}" class="section hero-banner">
-  <img class="hero-banner-img" src="{{ section.settings.banner_bg | img_url: 'master' }}" alt="{{ section.settings.banner_bg.alt }}">
-  <div class="container">
-    {% for block in section.blocks %}
-      {% case block.type %}
-        {% when 'banner_content' %}
-          <div class="hero-banner-content" {{ block.shopify_attributes }}>
-            <{{ block.settings.banner_h_tag }} class="h-hero">{{ block.settings.banner_heading }}</{{ block.settings.banner_h_tag }}>
-            {{ block.settings.banner_text }}
-          </div>
-      {% endcase %}
-    {% endfor %}
-  </div>
-</section>
+{% assign banner_bg = 'https://cdn.shopify.com/s/files/1/0588/4867/3992/files/alpacas-hero-banner.jpg?v=1629465210' %}
+{% assign banner_bg_setting = section.settings.banner_bg %}
+{% if banner_bg_setting %}
+  {% assign banner_bg = banner_bg_setting | img_url: 'master' %}
+{% endif %}
+<img class="hero-banner-img"
+     src="{{ banner_bg }}"
+     alt="{{ section.settings.banner_bg.alt | default: '3 Alpacas' }}"
+>
+<div class="container">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'banner_content' %}
+        <div class="hero-banner-content" {{ block.shopify_attributes }}>
+          <{{ block.settings.banner_h_tag }} class="h-hero">{{ block.settings.banner_heading }}</{{ block.settings.banner_h_tag }}>
+          {{ block.settings.banner_text }}
+        </div>
+    {% endcase %}
+  {% endfor %}
+</div>
 
 {% schema %}
 {
   "name": "Hero Banner",
   "tag": "section",
+  "class": "section hero-banner px-0",
   "settings": [
     {
       "type": "image_picker",

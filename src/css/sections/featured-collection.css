@@ -1,0 +1,8 @@
+.product-card {
+    & .h-product-name {
+        color: var(--body-black);
+    }
+    & .h-product-price {
+        color: var(--price-gray);
+    }
+}

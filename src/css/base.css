@@ -4,7 +4,6 @@
 }
 
 body {
-    background: var(--dark-green-blue);
     font-family: var(--body-font);
     color: var(--body-black);
 }
