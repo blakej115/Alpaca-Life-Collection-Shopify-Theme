@@ -6,3 +6,7 @@
         color: var(--price-gray);
     }
 }
+
+.product-card-link {
+    display: block;
+}

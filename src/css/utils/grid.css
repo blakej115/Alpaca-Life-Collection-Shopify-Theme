@@ -5,3 +5,7 @@
 .grid-3 {
     grid-template-columns: repeat(3, 1fr);
 }
+
+.gap-col-22 {
+    grid-column-gap: 22px;
+}

@@ -1,4 +1,33 @@
 .btn {
     display: inline-block;
-    color: #fff;
+    font-family: var(--body-font);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000000;
+    background: var(--tan-yellow);
+    padding: 19px 53px;
+    border: 1px solid var(--tan-yellow);
+    position: relative;
+    &:before {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,100%) scale(0);
+        bottom: 0;
+        width: 261px;
+        height: 261px;
+        background: var(--magenta-purple);
+        transition: transform var(--trans);
+        content: '';
+        border-radius: 50%;
+    }
+    &:hover {
+        &:before {
+            transform: translateX(-50%) scale(1);
+        }
+    }
 }

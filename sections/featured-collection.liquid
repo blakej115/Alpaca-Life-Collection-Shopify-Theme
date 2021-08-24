@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="section-title">
+    <div class="section-title mb-48">
       <{{ section.settings.heading_text_h_tag }} class="h1">
         {{ section.settings.heading_text }}
       </{{ section.settings.heading_text_h_tag }}>
@@ -8,19 +8,22 @@
       {% case block.type %}
         {% when 'featured_collection' %}
           <div class="offset-container" {{ block.shopify_attributes }}>
-            <div class="grid grid-3">
-              {% for product in block.settings.featured_collection.products limit: 3 %}
+            <div class="grid grid-3 gap-col-22">
+              {% assign featured_collection = collections.best-sellers %}
+              {% if block.settings.featured_collection %}
+                {% assign featured_collection = block.settings.featured_collection %}
+              {% endif %}
+              {% for product in featured_collection.products limit: 3 %}
                 <div class="product-card">
-                  <a class="product-card-link" href="">
-                    <img src="" alt="">
+                  <a class="product-card-link" href="/products/{{ product.handle }}">
+                    <img src="{{ product.featured_image | img_url: '345x406', crop: 'center' }}" alt="{{ product.title }}">
                     <div class="h-product-name">{{ product.title }}</div>
                     <div class="h-product-price">{{ product.price | money }}</div>
                   </a>
-                  {{ product |  json }}
                 </div>
               {% endfor %}
             </div>
-            <div class="flex jc-center">
+            <div class="flex jc-center mt-36">
               <a class="btn btn-primary" href="{{ block.settings.button_link |  default: '/collections/best-sellers' }}">
                 {{ block.settings.button_text }}
               </a>
@@ -34,7 +37,7 @@
 {
   "name": "Featured Collection",
   "tag": "section",
-  "class": "section featured-collection bg-gray-tan",
+  "class": "section featured-collection bg-gray-tan pt-56 pb-44",
   "settings": [
     {
       "type": "select",
