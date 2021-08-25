@@ -4,27 +4,121 @@
       "type": "hero-banner",
       "blocks": {
         "banner_content": {
-          "type": "banner_content"
+          "type": "banner_content",
+          "settings": {
+            "banner_h_tag": "h1",
+            "banner_heading": "hello!",
+            "banner_text": "<p>Alpacas are our passion, and we want to share that with you. At our farm, we are the proud owners of a group of award-winning herdsires– Sierra Bonitas Accoyo Magic, TSP’s Accoyo White Shadow, JAX Accoyo High Roller, ATC Accoyo Gold Nugget, ERA Accoyo Bronzen, and HHSF ACCOYO MONTOYO. We work diligently to breed them with only the best females around, and through superior bloodlines, we produce the most outstanding alpaca wool in existence.<\/p>"
+          }
         }
       },
       "block_order": [
         "banner_content"
-      ]
+      ],
+      "settings": {
+      }
     },
     "featured_collection": {
       "type": "featured-collection",
       "blocks": {
         "featured_collection": {
-          "type": "featured_collection"
+          "type": "featured_collection",
+          "settings": {
+            "featured_collection": "",
+            "button_Link": "",
+            "button_text": "View All"
+          }
         }
       },
       "block_order": [
         "featured_collection"
-      ]
+      ],
+      "settings": {
+        "heading_text_h_tag": "h1",
+        "heading_text": "Best Sellers"
+      }
+    },
+    "16299036131a4c6e02": {
+      "type": "split-collections",
+      "blocks": {
+        "16299036131a4c6e02-0": {
+          "type": "collection_block",
+          "settings": {
+            "collection_block": "outerwear",
+            "collection_image": "shopify:\/\/shop_images\/shop-apparel.jpg",
+            "tagline": "From Sweaters to Socks, We’ve got you covered!",
+            "button_text": "Shop Outerwhere"
+          }
+        },
+        "16299036131a4c6e02-1": {
+          "type": "collection_block",
+          "settings": {
+            "collection_block": "home-goods",
+            "collection_image": "shopify:\/\/shop_images\/shop-home.jpg",
+            "tagline": "Get cozy with blankets, candles, and more!",
+            "button_text": "Shop Home"
+          }
+        }
+      },
+      "block_order": [
+        "16299036131a4c6e02-0",
+        "16299036131a4c6e02-1"
+      ],
+      "settings": {
+      }
+    },
+    "1629903630d155d6fc": {
+      "type": "featured-collection",
+      "blocks": {
+        "1629903630d155d6fc-0": {
+          "type": "featured_collection",
+          "settings": {
+            "featured_collection": "new-arrivals",
+            "button_Link": "",
+            "button_text": "View All"
+          }
+        }
+      },
+      "block_order": [
+        "1629903630d155d6fc-0"
+      ],
+      "settings": {
+        "heading_text_h_tag": "h1",
+        "heading_text": "new arrivals"
+      }
+    },
+    "1629903739e097bff6": {
+      "type": "reviews",
+      "blocks": {
+        "1629903739e097bff6-0": {
+          "type": "heading",
+          "settings": {
+            "heading_h_tag": "h2",
+            "heading": "See it all!"
+          }
+        },
+        "1629903739e097bff6-1": {
+          "type": "heading",
+          "settings": {
+            "heading_h_tag": "h3",
+            "heading": "See Now"
+          }
+        }
+      },
+      "block_order": [
+        "1629903739e097bff6-0",
+        "1629903739e097bff6-1"
+      ],
+      "settings": {
+        "logo_svg_icon_url": ""
+      }
     }
   },
   "order": [
     "hero_banner",
-    "featured_collection"
+    "featured_collection",
+    "16299036131a4c6e02",
+    "1629903630d155d6fc",
+    "1629903739e097bff6"
   ]
 }
