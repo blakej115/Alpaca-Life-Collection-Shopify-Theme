@@ -1,0 +1,89 @@
+{% render 'logo',
+    main: true,
+    logo: section.settings.logo_svg_icon_url,
+    heading_h_tag: section.blocks[0].settings.heading_h_tag,
+    heading: section.blocks[0].settings.heading,
+    sub_heading_h_tag: section.blocks[1].settings.heading_h_tag,
+    sub_heading: section.blocks[1].settings.heading
+%}
+
+{% schema %}
+{
+"name": "See it All",
+"tag": "section",
+"class": "section see-it-all",
+"settings": [
+{
+"type": "url",
+"id": "logo_svg_icon_url",
+"label": "Logo SVG Icon URL"
+}
+],
+"blocks": [
+{
+"type": "heading",
+"name": "Heading",
+"limit": 2,
+"settings": [
+{
+"type": "select",
+"id": "heading_h_tag",
+"label": "Heading Tag",
+"options": [
+{
+"value": "h1",
+"label": "h1"
+},
+{
+"value": "h2",
+"label": "h2"
+},
+{
+"value": "h3",
+"label": "h3"
+},
+{
+"value": "h4",
+"label": "h4"
+},
+{
+"value": "h5",
+"label": "h5"
+},
+{
+"value": "h6",
+"label": "h6"
+}
+]
+},
+{
+"type": "text",
+"id": "heading",
+"label": "Heading"
+}
+]
+}
+],
+"presets": [
+{
+"name": "See it All",
+"blocks": [
+{
+"type": "heading",
+"settings": {
+"heading_h_tag": "h2",
+"heading": "See it all!"
+}
+},
+{
+"type": "heading",
+"settings": {
+"heading_h_tag": "h3",
+"heading": "See Now"
+}
+}
+]
+}
+]
+}
+{% endschema %}

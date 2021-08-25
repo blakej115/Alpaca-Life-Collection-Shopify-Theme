@@ -13,21 +13,27 @@
     padding: 19px 53px;
     border: 1px solid var(--tan-yellow);
     position: relative;
+    overflow: hidden;
+    transform: translateZ(0);
+    transition: color var(--trans);
     &:before {
         position: absolute;
         left: 50%;
-        transform: translate(-50%,100%) scale(0);
-        bottom: 0;
-        width: 261px;
-        height: 261px;
+        transform: translate(-50%,0);
+        bottom: -3rem;
+        --circle-size: 0px;
+        width: var(--circle-size);
+        height: var(--circle-size);
         background: var(--magenta-purple);
-        transition: transform var(--trans);
+        transition: width var(--trans), height var(--trans);
         content: '';
         border-radius: 50%;
+        z-index: -1;
     }
     &:hover {
+        color: #fff;
         &:before {
-            transform: translateX(-50%) scale(1);
+            --circle-size: 261px;
         }
     }
 }

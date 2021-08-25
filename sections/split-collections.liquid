@@ -1,0 +1,69 @@
+<div class="offset-container">
+	<div class="grid grid-2 gap-col-22">
+		{% for block in section.blocks %}
+			{% case block.type %}
+				{% when 'collection_block' %}
+					<div class="collection-block" {{ block.shopify_attributes }}>
+						<img src="{{ block.settings.collection_image |  img_url: '567,528', crop: 'center' }}" alt="{{ block.settings.collection_block.name }}">
+						<div class="cb-info">
+							<div class="cb-tagline">{{ block.settings.tagline }}</div>
+							<a class="cb-btn btn btn-primary" href="/collections/{{ block.settings.collection_block.handle }}">{{ block.settings.button_text }}</a>
+						</div>
+					</div>
+			{% endcase %}
+		{% endfor %}
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "Split Collections",
+	"tag": "section",
+	"class": "section split-collections",
+	"settings": [
+	],
+	"blocks": [
+		{
+			"type": "collection_block",
+			"name": "Collection Block",
+			"limit": 2,
+			"settings": [
+				{
+					"type": "collection",
+					"id": "collection_block",
+					"label": "Collection Block"
+				},
+				{
+					"type": "image_picker",
+					"id": "collection_image",
+					"label": "Collection Image"
+				},
+				{
+					"type": "text",
+					"id": "tagline",
+					"label": "Tagline"
+				},
+				{
+					"type": "text",
+					"id": "button_text",
+					"default": "Shop {{ collection.name }}",
+					"label": "Button Text"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Collection Block",
+			"blocks": [
+				{
+					"type": "collection_block"
+				},
+				{
+					"type": "collection_block"
+				}
+			]
+		}
+	]
+}
+{% endschema %}

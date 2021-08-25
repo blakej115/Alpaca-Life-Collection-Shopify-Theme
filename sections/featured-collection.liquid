@@ -15,7 +15,7 @@
               {% endif %}
               {% for product in featured_collection.products limit: 3 %}
                 <div class="product-card">
-                  <a class="product-card-link" href="/products/{{ product.handle }}">
+                  <a class="product-card-link t-align-center" href="/products/{{ product.handle }}">
                     <img src="{{ product.featured_image | img_url: '345x406', crop: 'center' }}" alt="{{ product.title }}">
                     <div class="h-product-name">{{ product.title }}</div>
                     <div class="h-product-price">{{ product.price | money }}</div>

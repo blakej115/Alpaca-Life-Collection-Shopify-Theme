@@ -5,7 +5,14 @@
   <div class="header-main">
     <div class="container header-container">
       <div class="logo main-logo">
-        {% render 'logo', main: true %}
+        {% render 'logo',
+            main: true,
+            logo: section.settings.logo_svg_icon_url,
+            heading_h_tag: section.settings.logo_text_h_tag,
+            heading: section.settings.logo_text,
+            sub_heading_h_tag: section.settings.logo_sub_text_h_tag,
+            sub_heading: section.settings.logo_sub_text
+        %}
       </div>
       <div class="header-right">
         <form class="header-search" action="{{ routes.search_url }}" method="get" role="search">
@@ -26,7 +33,14 @@
 <nav id="nav" data-nav="primary" data-toggle="primary">
   <div class="nav-top">
     <div class="logo nav-logo">
-      {% render 'logo', main: false %}
+      {% render 'logo',
+          main: false,
+          logo: section.settings.logo_svg_icon_url,
+          heading_h_tag: section.settings.logo_text_h_tag,
+          heading: section.settings.logo_text,
+          sub_heading_h_tag: section.settings.logo_sub_text_h_tag,
+          sub_heading: section.settings.logo_sub_text
+      %}
     </div>
     <div class="header-links nav-header-links">
       {% render 'header-links' %}
