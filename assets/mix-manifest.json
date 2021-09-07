@@ -1,10 +1,10 @@
 {
     "/app.js": "/app.js",
     "/style.css": "/style.css",
-    "/cart.svg": "/cart.svg",
     "/logo.svg": "/logo.svg",
-    "/search.svg": "/search.svg",
     "/shop-apparel.jpg": "/shop-apparel.jpg",
     "/shop-home.jpg": "/shop-home.jpg",
+    "/search.svg": "/search.svg",
+    "/cart.svg": "/cart.svg",
     "/alpacas-hero-banner.jpg": "/alpacas-hero-banner.jpg"
 }

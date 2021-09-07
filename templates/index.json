@@ -1,5 +1,6 @@
 {
   "sections": {
+
     "hero_banner": {
       "type": "hero-banner",
       "blocks": {
@@ -11,20 +12,107 @@
         "banner_content"
       ]
     },
+
     "featured_collection": {
       "type": "featured-collection",
+      "settings": {
+        "heading_text": "Best Sellers"
+      },
       "blocks": {
         "featured_collection": {
-          "type": "featured_collection"
+          "type": "featured_collection",
+          "settings": {
+            "featured_collection": "best-sellers",
+            "button_link": "/collections/best-sellers",
+            "button_text": "View All"
+          }
         }
       },
       "block_order": [
         "featured_collection"
       ]
+    },
+
+    "split_collections": {
+      "type": "split-collections",
+      "blocks": {
+        "collection_block": {
+          "type": "collection_block",
+          "settings": {
+            "collection_block": "outerwear",
+            "tagline": "From Sweaters to Socks, We’ve got you covered!",
+            "button_text": "Shop Apparel"
+          }
+        },
+        "collection_block_2": {
+          "type": "collection_block",
+          "settings": {
+            "collection_block": "home-goods",
+            "tagline": "Get cozy with blankets, candles, and more!",
+            "button_text": "Shop Home"
+          }
+        }
+      },
+      "block_order": [
+        "collection_block",
+        "collection_block_2"
+      ]
+    },
+
+    "featured_collection_2": {
+      "type": "featured-collection",
+      "settings": {
+        "heading_text": "New Arrivals"
+      },
+      "blocks": {
+        "featured_collection": {
+          "type": "featured_collection",
+          "settings": {
+            "featured_collection": "new-arrivals",
+            "button_link": "/collections/new-arrivals",
+            "button_text": "View All"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection"
+      ]
+    },
+
+    "see_it_all": {
+      "type": "see-it-all",
+      "settings": {
+        "logo_svg_icon_url": "https://cdn.shopify.com/s/files/1/0588/4867/3992/files/logo.svg?v=1629142311"
+      },
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading_h_tag": "h2",
+            "heading": "See it all!"
+          }
+        },
+        "heading_2": {
+          "type": "heading",
+          "settings": {
+            "heading_h_tag": "h3",
+            "heading": "See Now"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "heading_2"
+      ]
     }
+
   },
+
   "order": [
     "hero_banner",
-    "featured_collection"
+    "featured_collection",
+    "split_collections",
+    "featured_collection_2",
+    "see_it_all"
   ]
 }

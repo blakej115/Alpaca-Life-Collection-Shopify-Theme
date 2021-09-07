@@ -4,7 +4,7 @@ require('laravel-mix-imagemin')
 if (!mix.inProduction()) {
     mix
         .browserSync({
-            proxy: 'https://alpaca-life-collection-by-alpacas-of-greater-tn.myshopify.com',
+            proxy: 'http://127.0.0.1:9292',
             files: [
                 'src/**/*',
                 'layout/**/*',

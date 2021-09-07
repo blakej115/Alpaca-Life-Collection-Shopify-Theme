@@ -3,8 +3,16 @@
 		{% for block in section.blocks %}
 			{% case block.type %}
 				{% when 'collection_block' %}
+					{% assign collection_image = 'https://cdn.shopify.com/s/files/1/0588/4867/3992/files/shop-apparel.jpg?v=1629900683' %}
+					{% if block.settings.collection_block == 'home-goods' %}
+						{% assign collection_image = 'https://cdn.shopify.com/s/files/1/0588/4867/3992/files/shop-home.jpg?v=1629900727' %}
+					{% endif %}
+					{% assign collection_image_setting = block.settings.collection_image %}
+					{% if collection_image_setting %}
+						{% assign collection_image = collection_image_setting |  img_url: '567,528', crop: 'center' %}
+					{% endif %}
 					<div class="collection-block" {{ block.shopify_attributes }}>
-						<img src="{{ block.settings.collection_image |  img_url: '567,528', crop: 'center' }}" alt="{{ block.settings.collection_block.name }}">
+						<img src="{{ collection_image }}" alt="{{ block.settings.collection_block.name }}">
 						<div class="cb-info">
 							<div class="cb-tagline">{{ block.settings.tagline }}</div>
 							<a class="cb-btn btn btn-primary" href="/collections/{{ block.settings.collection_block.handle }}">{{ block.settings.button_text }}</a>
@@ -46,7 +54,7 @@
 				{
 					"type": "text",
 					"id": "button_text",
-					"default": "Shop {{ collection.name }}",
+					"default": "Shop Products",
 					"label": "Button Text"
 				}
 			]
@@ -54,13 +62,23 @@
 	],
 	"presets": [
 		{
-			"name": "Collection Block",
+			"name": "Split Collections",
 			"blocks": [
 				{
-					"type": "collection_block"
+					"type": "collection_block",
+					"settings": {
+						"collection_block": "outerwear",
+						"tagline": "From Sweaters to Socks, We’ve got you covered!",
+						"button_text": "Shop Apparel"
+					}
 				},
 				{
-					"type": "collection_block"
+					"type": "collection_block",
+					"settings": {
+						"collection_block": "home-goods",
+						"tagline": "Get cozy with blankets, candles, and more!",
+						"button_text": "Shop Home"
+					}
 				}
 			]
 		}
