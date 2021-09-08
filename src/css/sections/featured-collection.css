@@ -1,6 +1,7 @@
 .product-card {
     & .h-product-name {
         color: var(--body-black);
+        margin: 16px 0 14px;
     }
     & .h-product-price {
         color: var(--price-gray);

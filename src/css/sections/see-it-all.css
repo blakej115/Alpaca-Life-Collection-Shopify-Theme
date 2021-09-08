@@ -1,0 +1,5 @@
+.see-it-all {
+    display: flex;
+    justify-content: center;
+    padding: 36px var(--x-spacing) 40px;
+}

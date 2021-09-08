@@ -1,11 +1,16 @@
 .container,
-.offset-container {
+.offset-container,
+.offset-wider-container {
     margin-left: auto;
     margin-right: auto;
 }
 
 .container {
     max-width: 1234px; /* ... I declare a thumb war. */
+}
+
+.offset-wider-container {
+    max-width: 1157px;
 }
 
 .offset-container {

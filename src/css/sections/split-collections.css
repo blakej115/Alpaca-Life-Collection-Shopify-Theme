@@ -1,0 +1,23 @@
+.split-collections {
+    padding: 58px var(--x-spacing) 43px;
+}
+
+.cb-info {
+    position: relative;
+    padding: 0 58px;
+    display: flex;
+    justify-content: center;
+}
+
+.cb-tagline {
+    background: var(--dark-green-blue);
+    color: #fff;
+    padding: 23px 43px 42px;
+    text-align: center;
+    position: absolute;
+    top: -46px;
+}
+
+.cb-btn {
+    margin-top: 8px;
+}

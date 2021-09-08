@@ -104,6 +104,10 @@
         "heading",
         "heading_2"
       ]
+    },
+
+    "image_with_content": {
+      "type": "image-with-content"
     }
 
   },
@@ -113,6 +117,7 @@
     "featured_collection",
     "split_collections",
     "featured_collection_2",
-    "see_it_all"
+    "see_it_all",
+    "image_with_content"
   ]
 }

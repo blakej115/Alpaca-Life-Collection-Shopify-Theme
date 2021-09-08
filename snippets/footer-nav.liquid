@@ -1,0 +1,9 @@
+<nav class="footer-nav">
+  <ul>
+    {% for link in menu_items %}
+      <li>
+        <a class="f-nav" href="{{ link.url | escape }}">{{ link.title | escape }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

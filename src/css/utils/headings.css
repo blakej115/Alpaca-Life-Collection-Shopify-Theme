@@ -59,6 +59,16 @@ h6, .h6 {
     text-transform: uppercase;
 }
 
+.f-nav {
+    font-family: var(--body-font);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
 .h-nav-logo {
     font-family: var(--heading-font);
     font-style: normal;
