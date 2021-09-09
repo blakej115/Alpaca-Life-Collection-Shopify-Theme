@@ -1,14 +1,20 @@
-<div class="offset-wider-container">
-  {% assign featured_image = 'https://cdn.shopify.com/s/files/1/0588/4867/3992/files/alpaca-herd.jpg?v=1631119925' %}
-  {% assign featured_image_setting = section.settings.featured_image %}
-  {% if featured_image_setting %}
-    {% assign featured_image = featured_image_setting |  img_url: '586,466', crop: 'center' %}
-  {% endif %}
-  <img src="{{ featured_image }}" alt="{{ block.settings.collection_block.name }}">
-  {{ section.settings.content }}
-  <a class="btn btn-primary" href="{{ section.settings.button_link |  default: '#' }}">
-    {{ section.settings.button_text }}
-  </a>
+<div class="wider-container iwc-holder">
+  <div class="iwc-img">
+    {% assign featured_image = 'https://cdn.shopify.com/s/files/1/0588/4867/3992/files/alpaca-herd.jpg?v=1631119925' %}
+    {% assign featured_image_setting = section.settings.featured_image %}
+    {% if featured_image_setting %}
+      {% assign featured_image = featured_image_setting |  img_url: '586,466', crop: 'center' %}
+    {% endif %}
+    <img src="{{ featured_image }}" alt="{{ block.settings.collection_block.name }}">
+  </div>
+  <div class="iwc-content-holder">
+    <div class="iwc-content">
+      {{ section.settings.content }}
+    </div>
+    <a class="btn btn-primary" href="{{ section.settings.button_link |  default: '#' }}">
+      {{ section.settings.button_text }}
+    </a>
+  </div>
 </div>
 
 {% schema %}

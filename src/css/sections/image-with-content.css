@@ -1,0 +1,19 @@
+.image-with-content {
+    padding: 58px var(--x-spacing) 66px;
+}
+
+.iwc-holder {
+    display: grid;
+    grid-template-columns: 586fr 692fr;
+    column-gap: 43px;
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        background: var(--tan-yellow);
+    }
+}

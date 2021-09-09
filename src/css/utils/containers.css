@@ -1,8 +1,13 @@
 .container,
 .offset-container,
-.offset-wider-container {
+.offset-wider-container,
+.wider-container {
     margin-left: auto;
     margin-right: auto;
+}
+
+.wider-container {
+    max-width: 1321px;
 }
 
 .container {
